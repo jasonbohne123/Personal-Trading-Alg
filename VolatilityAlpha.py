@@ -1,3 +1,4 @@
+#While the Idea is just based of moving average convergence and divergence, a popular indicator, the code is original
 class MACDTrendAlgorithm(AlphaModel):
 
     def __init__(self,period = 75, movingaverage=MovingAverageType.Exponential,resolution = Resolution.Daily):

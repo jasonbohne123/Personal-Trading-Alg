@@ -1,7 +1,7 @@
 # Trading-Alg
 Algorithmic Trading Engine hosted through QuantConnect
 
-Included in this are a series of files from my trading algorithm built in QuantConnect's IDE.
+Included in this are a series of files from my personal trading algorithm built in QuantConnect's IDE.
 Building my algorithm through the QC Framework, the following file folders (representing each module) are listed:
 
 Universe Selection, Alpha Models, Portfolio Construction, Risk Management, Execution

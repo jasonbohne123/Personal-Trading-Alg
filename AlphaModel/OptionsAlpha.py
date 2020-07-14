@@ -1,5 +1,11 @@
 #This code is entirely original
 
+from clr import AddReference
+AddReference("QuantConnect.Common")
+AddReference("QuantConnect.Algorithm")
+AddReference("QuantConnect.Algorithm.Framework")
+AddReference("QuantConnect.Indicators")
+
 class alpha(AlphaModel):   
     def __init__(self,period = 75,resolution = Resolution.Daily):
       

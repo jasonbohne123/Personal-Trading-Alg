@@ -46,13 +46,14 @@ class ReversionAlg1Live(QCAlgorithm):
         self.Settings.RebalancePortfolioOnSecurityChanges = True;
         
         #Remaining Modules below 
- 
+        
+        #The Portfolio Construction Module is one of QC's default models
         self.SetPortfolioConstruction(EqualWeightingPortfolioConstructionModel())
   
         self.SetRiskManagement(takeprofit.TrailingStopRiskManagementModel())
     
-        
-        self.SetExecution(CustomExecution.ImmediateExecutionModel())
+        #The execution model was extended from one of QC's default model
+        self.SetExecution(ImmediateExecutionModel())
 
       
         self.Schedule.On(self.DateRules.Every(DayOfWeek.Monday, DayOfWeek.Tuesday,DayOfWeek.Wednesday,DayOfWeek.Thursday,DayOfWeek.Friday) ,self.TimeRules.At(15,0), self.SpecificTime)

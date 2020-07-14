@@ -1,3 +1,5 @@
+#The following is the main file of my live trading algorithm built through QuantConnect's IDE
+
 from CustomUniverse import  StableUniverse
 from CustomAlpha import ReversiontotheMean,VolatilityAlpha1
 from RiskManagement import takeprofit

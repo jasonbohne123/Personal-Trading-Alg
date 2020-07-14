@@ -25,7 +25,8 @@ class MACDTrendAlgorithm(AlphaModel):
     def Update(self, algorithm, data):
         
         insights = []
-          #Checks if insights were already generated if so return null
+          #We only want insights once a day so return otherwise
+            
         if algorithm.Time.day == self.day:
             return []
         
@@ -33,6 +34,7 @@ class MACDTrendAlgorithm(AlphaModel):
         for symbol, SymbolData in self.symbolDataBySymbol.items():
             if symbol.Value=="SPY" or  symbol.Value=="BND":
                 continue
+               #calculates our tolerance based on the current relationship between momentum of SPY vs Bond's
             if (self.MOMPspyMACD.Current.Value * 1.5) < self.MOMPbndMACD.Current.Value:
                 self.tolerance = 0.005
             else:
@@ -49,7 +51,7 @@ class MACDTrendAlgorithm(AlphaModel):
             # longterm says buy as well
                 insights.append(Insight.Price(symbol, self.insightPeriod, InsightDirection.Up))
                     
-            # ff our macd is less than signal, sell
+            # if our macd is less than signal, sell
             elif signalDeltaPercent < -self.tolerance:
                 insights.append(Insight.Price(symbol, self.insightPeriod, InsightDirection.Down))
             # if our macd is within our bounds, do nothing        
@@ -114,7 +116,7 @@ class MACDTrendAlgorithm(AlphaModel):
    
 
 class SymbolData:
-    '''Contains data specific to a symbol required by this model'''
+   #data specific of each symbol
     def __init__(self, symbol, macd):
         self.Symbol = symbol
         self.MACD   = macd

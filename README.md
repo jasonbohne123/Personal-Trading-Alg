@@ -6,5 +6,5 @@ Building my algorithm through the QC Framework, the following file folders (repr
 
 Universe Selection, Alpha Models, Portfolio Construction, Risk Management, Execution
 
-In each folder, corresponding programs are included, some entirely original, while others have been extended from example programs listed on QC's platform.
+In each folder are programs which some are entirely original or have been extended from example programs listed on QC's platform.
 Each program is marked original or extended to indicate the level of originality. 

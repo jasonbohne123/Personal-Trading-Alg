@@ -13,7 +13,7 @@ class ReversionAlg1Live(QCAlgorithm):
         self.SetTimeZone(TimeZones.Chicago)
 
         #self.SetBrokerageModel(BrokerageName.InteractiveBrokersBrokerage, AccountType.Margin)
-        self.AddUniverseSelection(StableUniverse.GreenBlattMagic(self)) 
+        self.AddUniverseSelection(StableUniverse.Stable(self)) 
         #Calls Universe class
     
         self.UniverseSettings.Resolution = Resolution.Minute #Resolution of data being analyzed by universe selection (Later need to switch to hour/minute)

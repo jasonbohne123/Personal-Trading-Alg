@@ -13,7 +13,7 @@ class ReversionAlg1Live(QCAlgorithm):
         self.SetEndDate(2020,4,3)
         self.SetCash(100000)  # Set Strategy Cash
         self.SetTimeZone(TimeZones.Chicago)
-
+        self.SetSecurityInitializer(lambda s: s.SetMarketPrice(self.GetLastKnownPrice(s))) 
         #self.SetBrokerageModel(BrokerageName.InteractiveBrokersBrokerage, AccountType.Margin)
         self.AddUniverseSelection(StableUniverse.Stable(self)) 
         #Calls Universe class
